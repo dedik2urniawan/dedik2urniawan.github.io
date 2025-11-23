@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dedik Kurniawan | Data Analytics & Health Innovation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio Dedik Kurniawan - Data Analytics, Nutritionist, Surveillance Specialist, and Health Innovation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #1f2937;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.4);
+      --radius-xl: 1.5rem;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 20px 72px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 0 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #22c55e, #22c55e 35%, #15803d 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #ecfdf5;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .logo-text span:last-child {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width var(--transition-fast);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .lang-pill {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 4px 8px;
+      font-size: 11px;
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .lang-pill span {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .lang-pill strong {
+      opacity: 1;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 28px;
+      align-items: center;
+      padding: 16px 0 40px;
+    }
+
+    .hero-left {
+      padding-right: 4px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(28px, 4vw, 36px);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #22c55e, #a3e635);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      box-shadow: 0 14px 35px rgba(34, 197, 94, 0.4);
+      color: #022c22;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(34, 197, 94, 0.5);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.12), #020617 50%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .hero-role {
+      font-size: 12px;
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .metric-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      padding: 10px 10px 9px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+    }
+
+    .metric-label {
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .hero-bottom-note {
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-bottom-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 24px;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .card + .card {
+      margin-top: 10px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .card-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: var(--text-muted);
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .list {
+      list-style: none;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .list li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .link {
+      font-size: 11px;
+      color: #a5b4fc;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .contact-card {
+      display: grid;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-label {
+      min-width: 68px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .footer {
+      margin-top: 32px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dot-separator {
+      margin: 0 6px;
+      opacity: 0.7;
+    }
+
+    .en-block-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .en-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      .hero-right {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding-inline: 16px;
+      }
+      .hero-card {
+        padding: 16px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">DK</div>
+        <div class="logo-text">
+          <span>Portfolio</span>
+          <span>Dedik Kurniawan</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Tentang</a>
+        <a href="#expertise">Keahlian</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#projects">Proyek</a>
+        <a href="#awards">Prestasi</a>
+        <a href="#contact">Kontak</a>
+        <a href="#en-version" class="lang-pill"><strong>ID</strong> / <span>EN</span></a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>Data Analytics · Nutritionist · Surveillance Specialist · Health Innovation</span>
+        </div>
+        <h1 class="hero-title">
+          Dedik Kurniawan, S.Gz<br />
+          <span>Nutrition Data & Health Innovation Specialist</span>
+        </h1>
+        <div class="hero-tagline">
+          Data Analytics · Nutritionist · Surveillance Specialist · Health Innovation
+        </div>
+        <p class="hero-subtitle">
+          Nutrisionis, analis data, dan inovator layanan kesehatan publik dengan fokus pada
+          <strong>surveilans gizi, pemanfaatan data besar, dan transformasi digital</strong> untuk percepatan penanggulangan stunting dan penguatan sistem kesehatan di Indonesia.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Magister Ilmu Gizi · Universitas Brawijaya</span>
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Data Analytics · Python · R · BI Tools</span>
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Health Innovation & Public Service</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            Lihat Proyek & Inovasi →
+          </a>
+          <a href="#contact" class="btn-ghost">
+            Hubungi Saya
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-name">Dedik Kurniawan</div>
+              <div class="hero-role">Nutritionist · Data Analyst · Innovator</div>
+            </div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span>Dinas Kesehatan Kabupaten Malang</span>
+            </div>
+          </div>
+
+          <div class="hero-meta">
+            Berpengalaman di layanan gizi primer, manajemen program, dan riset kolaboratif nasional dengan Kementerian Kesehatan, universitas, dan lembaga internasional.
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <div class="metric-label">Pengalaman</div>
+              <div class="metric-value">± 15+ thn</div>
+              <div class="metric-label">Layanan gizi & inovasi</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Peran</div>
+              <div class="metric-value">Nutritionist</div>
+              <div class="metric-label">Data & Policy Support</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Fokus</div>
+              <div class="metric-value">Stunting</div>
+              <div class="metric-label">Surveilans & EBPM</div>
+            </div>
+          </div>
+
+          <div class="hero-bottom-note">
+            <span class="hero-bottom-dot"></span>
+            <span>
+              Aktif mengembangkan dashboard RCS, program Tindik Anting, dan inovasi UKM Flash untuk integrasi data gizi & layanan kesehatan lintas program.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Kolom kiri -->
+      <div>
+        <section id="about">
+          <h2 class="section-title">Tentang</h2>
+          <div class="card">
+            <div class="card-body">
+              <p>
+                Saya adalah <strong>nutrisionis dan analis data</strong> yang bekerja di
+                <strong>Dinas Kesehatan Kabupaten Malang</strong>, dengan rekam jejak panjang dalam pengembangan program gizi masyarakat, surveilans status gizi, dan inovasi pelayanan publik berbasis data dan teknologi digital. Latar belakang pendidikan gizi klinis dan masyarakat dipadukan dengan <strong>keahlian pemrograman, statistik, dan business intelligence</strong> untuk mendesain solusi kesehatan yang terukur, replicable, dan evidence-based.
+              </p>
+              <br />
+              <p>
+                Ketertarikan utama saya adalah menghubungkan data, teknologi, dan kebijakan: mulai dari pemantauan pertumbuhan balita, pemetaan partisipatif komunitas, hingga pengembangan dashboard analitik untuk mendukung <strong>keputusan strategis penurunan stunting</strong> di level kabupaten maupun nasional.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="expertise">
+          <h2 class="section-title">Keahlian Utama</h2>
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-title">Data Analytics & Surveillance</div>
+              <div class="card-body">
+                <ul class="list">
+                  <li>Analisis data gizi & kesehatan masyarakat (balita, ibu hamil, remaja).</li>
+                  <li>Pengolahan data dengan Python, R, SPSS, Stata, SEM-PLS.</li>
+                  <li>Desain & implementasi surveilans gizi (CPMS, SSGI, EPPGBM, dsb.).</li>
+                  <li>Business intelligence & dashboarding (Looker Studio, Power BI, Streamlit).</li>
+                </ul>
+                <div class="tag-row">
+                  <span class="tag">Python · R · Stata · SPSS</span>
+                  <span class="tag">Data Quality & Cleaning</span>
+                  <span class="tag">Survey Design</span>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">Health Innovation & Digital Solutions</div>
+              <div class="card-body">
+                <ul class="list">
+                  <li>Pengembangan aplikasi & dashboard gizi (Next.js, Streamlit, Supabase, SQLite).</li>
+                  <li>Desain sistem informasi untuk UKM, Puskesmas, dan Dinas Kesehatan.</li>
+                  <li>Integrasi data lintas program (gizi, KIA, TBC, KB, keuangan inklusif).</li>
+                  <li>Penggunaan Kobotoolbox, ODK, EpiCollect5 untuk pengumpulan data lapangan.</li>
+                </ul>
+                <div class="tag-row">
+                  <span class="tag">Next.js · Streamlit</span>
+                  <span class="tag">Supabase · SQLite</span>
+                  <span class="tag">Kobotoolbox · ODK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 10px;">
+            <div class="card-title">Keterampilan Bidang Gizi & Kesehatan</div>
+            <div class="card-body">
+              <ul class="list">
+                <li>Nutritional Care Process (NCP) di Puskesmas dan Rumah Sakit.</li>
+                <li>Pelatihan gizi bencana & rencana kontingensi.</li>
+                <li>HACCP untuk keamanan pangan dan air minum (aircraft drinking water).</li>
+                <li>Akupunktur medis & teknik penunjang seperti Ryodoraku Analyzer.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Community Nutrition</span>
+                <span class="tag">HACCP</span>
+                <span class="tag">Disaster Nutrition</span>
+                <span class="tag">Akupunktur Medis</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <h2 class="section-title">Pengalaman Kerja</h2>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Konsultan Data Analisis – PAR PMT Pangan Lokal</div>
+                <div class="card-meta">2025 – Sekarang · BKPK Kemenkes RI, FIKES UB, Poltekkes Mataram</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Quantitative Research</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Mendukung implementasi PMT pangan lokal melalui analisis data kuantitatif, pemantauan dampak, dan visualisasi hasil untuk pengambilan kebijakan berbasis bukti di tingkat nasional dan daerah.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Konsultan Data Analisis – Pelita Kesmas</div>
+                <div class="card-meta">2024 – 2025 · Kemenkes RI & UNICEF Indonesia</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Digital Reporting</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Mengembangkan dan mengoptimalkan platform pelaporan gizi buruk di Indonesia dengan fokus pada kualitas data, konsistensi indikator, dan integrasi surveilans gizi dalam sistem informasi nasional.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Nutrisionis Ahli Pertama – Kesehatan Keluarga & Gizi</div>
+                <div class="card-meta">2022 – Sekarang · Dinas Kesehatan Kabupaten Malang</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Program Gizi & Surveilans</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Mengelola program gizi masyarakat, pemantauan status gizi balita, koordinasi lintas program, dan pengembangan inovasi seperti Tindik Anting & dashboard RCS untuk mendukung EBPM.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Tenaga Gizi Puskesmas & Pengelola Program</div>
+                <div class="card-meta">2006 – 2021 · Puskesmas & Dinkes (Manado & Malang)</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Pelayanan Primer</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Pengalaman panjang di lini depan pelayanan gizi, termasuk Puskesmas Ampelgading, Bailang, serta peran sebagai verifikator Jamkesmas dan pengelola perencanaan program (Renvapor).
+            </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2 class="section-title">Proyek & Inovasi</h2>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">RCS Dashboard & TINDIK ANTING AI</div>
+                <div class="card-meta">2022 – Sekarang · SIGMA / TINDIK ANTING Malang</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>AI-Driven Nutrition Surveillance</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Pengembangan <strong>RCS Dashboard</strong> sebagai pusat analitik status gizi balita dan ibu hamil berbasis integrasi multi-sumber data (CPMS, EPPGBM, SIGIZI-KESGA, dan data lokal Puskesmas).
+              <br /><br />
+              Program <strong>TINDIK ANTING (Temukan Dini, Intervensi dan Dampingi Kasus Stunting)</strong> menggabungkan <em>Community Participatory Mapping & Surveillance (CPMS)</em>, scoring risiko, dan modul AI untuk membantu tenaga kesehatan mengidentifikasi kasus risiko tinggi secara cepat dan terarah.
+              <br /><br />
+              <a class="link" href="https://www.tindikanting.id/" target="_blank" rel="noreferrer">Website Tindik Anting</a>
+              <span class="dot-separator">·</span>
+              <a class="link" href="https://www.kesgagizimalangkab.my.id/" target="_blank" rel="noreferrer">Dashboard Gizi Malang</a>
+              <div class="tag-row">
+                <span class="tag">CPMS</span>
+                <span class="tag">AI & Risk Scoring</span>
+                <span class="tag">Stunting Early Warning</span>
+                <span class="tag">Evidence-Based Policy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Tindik Anting & Program SIGMA</div>
+                <div class="card-meta">2022 – Sekarang · Leader Project ICT & Sistem Informasi</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Stunting Surveillance</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Inovasi “Temukan Dini, Intervensi dan Dampingi Kasus Stunting” dengan pendekatan
+              <strong>Community Participatory Mapping & Surveillance (CPMS)</strong> dan integrasi dashboard RCS sebagai tools pemantauan konvergensi program gizi di 39 Puskesmas.
+              <div class="tag-row">
+                <span class="tag">CPMS</span>
+                <span class="tag">Dashboard RCS</span>
+                <span class="tag">Multi-program Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">UKM Flash – Inovasi Pelayanan Publik</div>
+                <div class="card-meta">2019 – 2022 · Leader Innovator & ICT</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Public Service Innovation</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Program integrasi layanan kesehatan masyarakat (TBC, KB, KIA, gizi) dalam satu platform UKM Flash
+              yang meraih TOP 30 Kovablik Jawa Timur 2021.
+              <br /><br />
+              <a class="link" href="http://www.ukmflash.id/" target="_blank" rel="noreferrer">www.ukmflash.id</a>
+              <div class="tag-row">
+                <span class="tag">Service Integration</span>
+                <span class="tag">Public Sector Innovation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Stella & Kibbla Plus</div>
+                <div class="card-meta">2015 – 2017 · Community Nutrition Innovation</div>
+              </div>
+              <span class="pill">
+                <span class="pill-dot"></span>
+                <span>Gizi Komunitas</span>
+              </span>
+            </div>
+            <div class="card-body">
+              Proyek “Smart Initiative Palliative & Nutrition Class” untuk peningkatan status gizi kurang dengan kelas gizi & pembelajaran digital, serta inovasi Kibbla Plus di Puskesmas Ampelgading.
+              <br /><br />
+              <a class="link" href="https://dedik2urniawan.carrd.co/" target="_blank" rel="noreferrer">
+                Portfolio legacy project
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2 class="section-title">Publikasi & Karya Ilmiah</h2>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list">
+                <li>
+                  <strong>Systematic Review Digital Applications Accuracy</strong> untuk perhitungan dan penilaian
+                  status gizi balita. <a class="link" href="https://doi.org/10.20473/amnt.v9i3.2025.545-556" target="_blank" rel="noreferrer">Link publikasi</a>
+                </li>
+                <li>
+                  <strong>Pro-Insting (Financial Inclusion Program to Prevent Stunting)</strong> – program inklusi
+                  keuangan untuk pemberdayaan ekonomi perempuan dan pencegahan stunting.
+                  <a class="link" href="http://journal2.uad.ac.id/index.php/ijiefb/article/view/847/476" target="_blank" rel="noreferrer">Link jurnal</a>
+                </li>
+                <li>
+                  <strong>Data Quality Report SSGI 2022</strong> & analisis distribusi status gizi balita dengan pendekatan
+                  statistik R pada level kabupaten.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Kolom kanan -->
+      <div>
+        <section id="education">
+          <h2 class="section-title">Pendidikan & Sertifikasi</h2>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list">
+                <li>
+                  <strong>Magister Ilmu Gizi</strong> – Fakultas Ilmu Kesehatan, Universitas Brawijaya.
+                </li>
+                <li>
+                  <strong>S1 Gizi</strong> – Fakultas Kedokteran, Universitas Brawijaya.
+                </li>
+                <li>
+                  <strong>D3 Gizi</strong> – Poltekkes Kemenkes Malang, Jurusan Gizi.
+                </li>
+              </ul>
+              <br />
+              <p class="card-meta">Pelatihan & course terpilih:</p>
+              <ul class="list">
+                <li>Course Data Analytics, ArcGIS & R Programming (Udemy).</li>
+                <li>Pemrograman PHP dari tingkat pemula sampai advanced (Udemy).</li>
+                <li>Pelatihan gizi bencana & rencana kontingensi (Kemenkes RI).</li>
+                <li>Training HACCP, Pelatihan Konselor ASI, Auditor Halal, MEAD & PDS.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="awards">
+          <h2 class="section-title">Prestasi & Penghargaan</h2>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list">
+                <li>
+                  <strong>Juara II Soyjoy Nutritionist Award (2024)</strong> · kategori Puskesmas, RS & Dinkes – inovasi program Tindik Anting berbasis CPMS.
+                </li>
+                <li>
+                  <strong>Tenaga Kesehatan Berprestasi Bidang Gizi</strong> · Tingkat Provinsi Jawa Timur (2021).
+                </li>
+                <li>
+                  <strong>Juara 1 Inovasi Cegah Stunting – BKKBN RI & HIPPG</strong> · Inovasi UKM Flash (2021).
+                </li>
+                <li>
+                  <strong>Alumni Inovatif</strong> – Ikatan Alumni Gizi FK Universitas Brawijaya (2021).</li>
+                <li>
+                  <strong>Juara I Kompetisi Inklusi Keuangan – OJK RI</strong> · Program Prodesiku (2015).</li>
+                <li>
+                  Berbagai penghargaan nasional lain di bidang <strong>pangan fungsional, penelitian transportasi,
+                  dan inovasi layanan publik</strong>.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2 class="section-title">Kontak & Jejak Digital</h2>
+          <div class="card">
+            <div class="contact-card">
+              <div class="contact-row">
+                <span class="contact-label">Email</span>
+                <a href="mailto:dedik2urniawan@gmail.com" class="link">dedik2urniawan@gmail.com</a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Telepon</span>
+                <span>+62 812-1635-4887</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Website</span>
+                <a href="https://dedik2urniawan.carrd.co/" target="_blank" rel="noreferrer" class="link">
+                  dedik2urniawan.carrd.co
+                </a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Instagram</span>
+                <a href="https://www.instagram.com/dedik2urniawan/" target="_blank" rel="noreferrer" class="link">
+                  @dedik2urniawan
+                </a>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Google Scholar</span>
+                <span>ID: ZqEH544AAAAJ</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Lokasi</span>
+                <span>Kabupaten Malang, Jawa Timur, Indonesia</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- English Version -->
+    <section id="en-version" style="margin-top: 36px;">
+      <h2 class="section-title">English Snapshot</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="en-note">
+            Short English overview for international collaborators and partners.
+          </p>
+          <p class="en-block-title">Profile</p>
+          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">
+            I am a <strong>nutritionist, data analyst, and public health innovator</strong> at the District Health Office of Malang, Indonesia. My work focuses on
+            <strong>nutrition surveillance, data-driven decision-making, and digital health innovation</strong> to accelerate stunting reduction and strengthen primary health care systems.
+          </p>
+
+          <p class="en-block-title">Key Expertise</p>
+          <ul class="list" style="margin-bottom: 8px;">
+            <li>Nutrition data analytics (children under five, pregnant women, adolescents).</li>
+            <li>Design and implementation of nutrition surveillance systems (CPMS, SSGI, EPPGBM).</li>
+            <li>Dashboard and BI development (R, Python, Looker Studio, Power BI, Streamlit).</li>
+            <li>Digital health innovations for integrated public health services.</li>
+          </ul>
+
+          <p class="en-block-title">Flagship Innovation</p>
+          <p style="font-size: 12px; color: var(--text-muted);">
+            <strong>RCS Dashboard & TINDIK ANTING AI</strong> is a county-wide nutrition surveillance platform that integrates multiple data sources into a single decision-support dashboard. It combines
+            <em>Community Participatory Mapping & Surveillance (CPMS)</em> with AI-assisted risk scoring to help health workers detect and prioritize high-risk stunting cases.
+          </p>
+          <br />
+          <p style="font-size: 11px; color: var(--text-muted);">
+            For collaboration or research partnership opportunities, feel free to contact me via
+            <a href="mailto:dedik2urniawan@gmail.com" class="link">email</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Dedik Kurniawan · Nutrition Data & Health Innovation.</div>
+      <div>Powered by GitHub Pages · Designed for data-driven public health.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
