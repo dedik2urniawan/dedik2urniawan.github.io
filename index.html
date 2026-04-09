@@ -13,15 +13,36 @@
   <meta property="og:description" content="Portfolio Dedik Kurniawan - Data Analytics, Nutritionist, Surveillance Specialist, and Health Innovation." />
   <meta property="og:url" content="https://dedik2urniawan.github.io/" />
   <meta property="og:type" content="website" />
+  <!-- Open Graph Image (Opsional) -->
+  <meta property="og:image" content="https://dedik2urniawan.github.io/preview.png" />
   
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://dedik2urniawan.github.io/preview.png" />
   <meta name="twitter:title" content="Dedik Kurniawan | Data Analytics & Health Innovation" />
   <meta name="twitter:description" content="Portfolio Dedik Kurniawan - Data Analytics, Nutritionist, Surveillance Specialist, and Health Innovation." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Structured Data / JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dedik Kurniawan",
+    "jobTitle": "Nutritionist & Data Analyst",
+    "url": "https://dedik2urniawan.github.io/",
+    "sameAs": [
+      "mailto:dedik2urniawan@gmail.com"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Dinas Kesehatan Kabupaten Malang"
+    },
+    "description": "Nutrisionis, analis data, dan inovator layanan kesehatan publik dengan fokus pada surveilans gizi, pemanfaatan data besar, dan transformasi digital."
+  }
+  </script>
   <style>
     :root {
       --bg: #050816;
@@ -49,6 +70,12 @@
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     a {
@@ -64,7 +91,7 @@
     .page {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 24px 20px 72px;
+      padding: 0 20px 72px;
     }
 
     header {
@@ -72,7 +99,15 @@
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      padding: 12px 0 24px;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 6, 23, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      margin: 0 -20px 24px -20px;
     }
 
     .logo {
@@ -294,13 +329,22 @@
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.12), #020617 50%);
+      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.15), rgba(2, 6, 23, 0.8) 50%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: var(--shadow-soft);
-      padding: 20px 20px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      padding: 24px 24px 20px;
       position: relative;
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      border-color: rgba(34, 197, 94, 0.5);
     }
 
     .hero-card-header {
@@ -389,11 +433,20 @@
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 16px 16px 14px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 20px 20px 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      border-color: rgba(34, 197, 94, 0.3);
     }
 
     .card + .card {
@@ -490,6 +543,11 @@
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .link:hover {
+      color: #c7d2fe;
     }
 
     .contact-card {
